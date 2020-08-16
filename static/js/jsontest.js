@@ -44,11 +44,7 @@ function gethero()
 //callback function to receive results
 function superheroapi(result)
 {
-    document.getElementById("hero").innerHTML = "";
+    document.getElementById("hero").innerHTML = JSON.stringify(result.results);
     console.log(result.results);
-    result.results.forEach(displayhero);
 }
-function displayhero(hero)
-{
-    document.getElementById("hero").innerHTML += `<p>,<h3>${hero.name}</h3><br/><image src=${hero.image.url} /></p>`;
-}
+
