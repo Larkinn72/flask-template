@@ -1,6 +1,6 @@
 import grovepi
 import time
-from interfaces import grove_rgb_lcd
+from interfaces import grove_rgb_lcd_interface
 from interfaces.databaseinterface import Database
 import urlrequest
 
