@@ -37,6 +37,30 @@ def brickpiturtle():
         pass
     return render_template('brickpiturtle.html')
 
+@brickpiblueprint.route('/brickpistart', methods=['GET', 'POST'])
+def brickpistart():
+    BRICKPI.move_power(30)
+    return
+
+@brickpiblueprint.route('/brickpistop', methods=['GET', 'POST'])
+def brickpistop():
+    BRICKPI.stop_all()
+    return
+
+@brickpiblueprint.route('/brickpiright', methods=['GET', 'POST'])
+def brickpiright():
+    BRICKPI.rotate_power_time(30,3)
+    return
+
+@brickpiblueprint.route('/brickpileft', methods=['GET', 'POST'])
+def brickpileft():
+    BRICKPI.rotate_power_time(-30,3)
+    return
+
+@brickpiblueprint.route('/brickpishoot', methods=['GET', 'POST'])
+def brickpishoot():
+    BRICKPI.spin_medium_motor(900)
+    return
 
 # ----------AJAX / JSON REQUEST HANDLERS ---------------------------------
 # AJAX - load the brickpi
