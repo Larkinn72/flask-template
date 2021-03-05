@@ -11,6 +11,7 @@ class Robot(BrickPiInterface):
 
     def __init__(self, timelimit=20, logger=logging.getLogger()):
         super().__init__(timelimit, logger)
+        #self.CurrentCommand = "stop"
         self.CurrentRoutine = "none"
         return
 
@@ -42,6 +43,8 @@ if __name__ == '__main__':
     robot.configure_sensors(motorports, sensorports) #This takes 4 seconds
     robot.log("HERE I AM")
     input("Press any key to test: ")
-    robot.move_power_time(30, 3, deviation=5) #deviation 5 seems work well, if reversing deviation needs to also reverse
+    robot.move_power_time(-30, 4, deviation=0) #deviation 5 seems work well, if reversing deviation needs to also reverse
+    robot.rotate_power_time(30, 1)
+    print("HELLO")
     print(robot.get_all_sensors())
     robot.safe_exit()
